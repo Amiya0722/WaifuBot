@@ -26,7 +26,7 @@ intents.message_content = True
 intents.members = True
 
 # Bot setup
-bot = commands.Bot(command_prefix='@', intents=intents)
+bot = commands.Bot(command_prefix='/', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -94,7 +94,7 @@ async def tag(ctx):
         await ctx.send(embed = embed)
 @bot.command()
 async def helpbot(ctx):
-    value = "@hello: Greets the user who called the command. \n @waifu [tag1] [tag2] ...: Sends a random waifu image based on the specified tags.\n@tag: Displays a list of available tags for the waifu command.\n@helpbot: Displays a list of available commands.\n@pixiv [search_term]: Sends a random Pixiv illustration based on the specified search term."
+    value = "/hello: Greets the user who called the command. \n /waifu [tag1] [tag2] ...: Sends a random waifu image based on the specified tags.\n/tag: Displays a list of available tags for the waifu command.\n/helpbot: Displays a list of available commands.\n/pixiv [search_term]: Sends a random Pixiv illustration based on the specified search term."
     embed = discord.Embed(title = "Help")
     embed.add_field(name = "command", value = value)
     await ctx.send(embed = embed)
