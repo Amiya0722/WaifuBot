@@ -32,11 +32,11 @@ This is a Discord bot that provides anime/waifu image functionality using the Wa
 - `discord.log`: Bot logging output
 
 ### Bot Commands
-- `@hello`: Greets the user
-- `@waifu [tag1] [tag2] ...`: Sends a random waifu image based on specified tags
-- `@tag`: Displays available tags for the waifu command
-- `@helpbot`: Displays list of available commands
-- `@pixiv [search_term]`: Sends a random Pixiv illustration based on search term
+- `/hello`: Greets the user
+- `/waifu [tag1] [tag2] ...`: Sends a random waifu image based on specified tags
+- `/tag`: Displays available tags for the waifu command
+- `/helpbot`: Displays list of available commands
+- `/pixiv [search_term]`: Sends a random Pixiv illustration based on search term
 
 ## Environment Variables
 The following secrets are configured in Replit Secrets:
