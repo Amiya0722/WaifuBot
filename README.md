@@ -1,56 +1,62 @@
 # Discord Bot with Pixiv Integration
 
-## Installation
+## Overview
+This is a Discord bot that provides anime/waifu image functionality using the Waifu.im API and Pixiv API integration. The bot responds to various commands for fetching and displaying images.
 
-1. Clone the repository:
-```
-git clone https://github.com/Amiya0722/WaifuBot
-```
-2. Install the required dependencies:
-```
-pip install -r requirements.txt
-```
-3. Create a `.env` file in the project directory and add the following environment variables:
-```
-TOKEN=your_discord_bot_token
-PIXIV_REFRESH_TOKEN=your_pixiv_refresh_token
-```
+## Project Type
+- **Language**: Python 3.12
+- **Main Application**: Discord Bot (Console Application)
+- **APIs Used**: Discord API, Waifu.im API, Pixiv API
 
-## Usage
+## Recent Changes (October 16, 2025)
+- Imported from GitHub repository
+- Installed Python 3.12 and all required dependencies (discord.py, requests, python-dotenv, pixivpy3)
+- Fixed type safety issues in index.py:
+  - Added null check for bot.user.name
+  - Added validation for TOKEN environment variable
+- Fixed critical bug in pixiv_auth.py:
+  - Removed trailing space from Pixiv download filename (was causing FileNotFoundError)
+  - Added validation for PIXIV_REFRESH_TOKEN environment variable
+- Converted Windows line endings to Unix format
+- Created img/ directory for Pixiv image downloads
+- Updated .gitignore to exclude img/, discord.log, and Python cache files
+- Configured Discord Bot workflow to run the bot
+- Set up environment secrets: TOKEN (Discord bot token) and PIXIV_REFRESH_TOKEN (Pixiv API token)
 
-1. Run the bot:
-```
-python index.py
-```
-2. The bot will start running and you can interact with it using the following commands:
-   - `@hello`: Greets the user who called the command.
-   - `@waifu [tag1] [tag2] ...`: Sends a random waifu image based on the specified tags.
-   - `@tag`: Displays a list of available tags for the waifu command.
-   - `@helpbot`: Displays a list of available commands.
-   - `@pixiv [search_term]`: Sends a random Pixiv illustration based on the specified search term.
+## Project Architecture
+### File Structure
+- `index.py`: Main Discord bot application with command handlers
+- `pixiv_auth.py`: Pixiv API authentication and image fetching functionality
+- `requirements.txt`: Python dependencies
+- `img/`: Directory for temporary Pixiv image storage
+- `discord.log`: Bot logging output
 
-## API
+### Bot Commands
+- `@hello`: Greets the user
+- `@waifu [tag1] [tag2] ...`: Sends a random waifu image based on specified tags
+- `@tag`: Displays available tags for the waifu command
+- `@helpbot`: Displays list of available commands
+- `@pixiv [search_term]`: Sends a random Pixiv illustration based on search term
 
-The bot uses the following APIs:
-- [Discord API](https://discord.com/developers/docs/intro)
-- [Waifu.im API](https://waifu.im/api-docs/)
-- [Pixiv API](https://pixivpy.readthedocs.io/en/latest/)
+## Environment Variables
+The following secrets are configured in Replit Secrets:
+- `TOKEN`: Discord bot token (required)
+- `PIXIV_REFRESH_TOKEN`: Pixiv refresh token for API access (required)
 
-## Contributing
+## Workflow Configuration
+- **Workflow Name**: Discord Bot
+- **Command**: `python3 index.py`
+- **Output Type**: Console
+- **Status**: Running
 
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them.
-4. Push your changes to your forked repository.
-5. Submit a pull request.
+## Dependencies
+- discord.py: Discord API wrapper
+- requests: HTTP library for API calls
+- python-dotenv: Environment variable management
+- pixivpy3: Pixiv API wrapper
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Testing
-
-To run the tests, use the following command:
-```
-python -m unittest discover tests
-```
+## Notes
+- Bot uses @ as command prefix
+- Images from Pixiv are temporarily downloaded to img/ directory and deleted after sending
+- Bot includes content moderation (filters certain words)
+- Logging is configured to write to discord.log file
