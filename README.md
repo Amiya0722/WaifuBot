@@ -33,6 +33,7 @@ This is a Discord bot that provides anime/waifu image functionality using the Wa
 
 ### Bot Commands
 - `/hello`: Greets the user
+- `/ping`: Check the responsiveness and operational status of the bot
 - `/waifu [tag1] [tag2] ...`: Sends a random waifu image based on specified tags
 - `/tag`: Displays available tags for the waifu command
 - `/helpbot`: Displays list of available commands
